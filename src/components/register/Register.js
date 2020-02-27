@@ -115,6 +115,7 @@ function Register() {
           type="email"
           className={`form-control ${formErrors.email ? 'is-invalid' : ''}`}
           id="email"
+          name="email"
           value={formState.email}
           aria-describedby="emailErr"
           placeholder="Enter email"
