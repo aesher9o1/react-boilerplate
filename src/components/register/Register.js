@@ -11,20 +11,20 @@ import './register.less'
 
 function Register() {
   const [formState, setFormState] = useState({
-    course_url: null,
-    first_name: null,
-    last_name: null,
-    password: null,
-    email: null,
-    phone_primary: null,
+    course_url: '',
+    first_name: '',
+    last_name: '',
+    password: '',
+    email: '',
+    phone_primary: '',
     country_code: '+91',
-    signup_page: null,
-    payment_type: null,
-    batch: null,
-    coupon_code: null,
-    objective_of_learning: null,
-    utm_campaign: null,
-    csrf_test_name: null
+    signup_page: '',
+    payment_type: '',
+    batch: '',
+    coupon_code: '',
+    objective_of_learning: '',
+    utm_campaign: '',
+    csrf_test_name: ''
   })
 
   const [formErrors, setFormErrors] = useState({
@@ -115,6 +115,7 @@ function Register() {
           type="email"
           className={`form-control ${formErrors.email ? 'is-invalid' : ''}`}
           id="email"
+          value={formState.email}
           aria-describedby="emailErr"
           placeholder="Enter email"
           onChange={handleFieldChange}

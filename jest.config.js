@@ -9,5 +9,9 @@ module.exports = {
   testPathIgnorePatterns: ['\\\\node_modules\\\\'],
   testURL: 'http://localhost',
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  verbose: true
+  verbose: true,
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
+    '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js'
+  }
 }
