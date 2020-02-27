@@ -49,8 +49,8 @@ function Register() {
         Enter a valid email
       </small>
     ) : (
-      ''
-    )
+        ''
+      )
   }
 
   const showPhoneInvalid = () => {
@@ -59,16 +59,16 @@ function Register() {
         Enter a valid mobile number
       </small>
     ) : (
-      ''
-    )
+        ''
+      )
   }
 
   const showErrorIconForId = (id) => {
     return formErrors[id] ? (
       <span className="fa fa-exclamation-circle error-icon" aria-hidden="true" />
     ) : (
-      ''
-    )
+        ''
+      )
   }
 
   const handleFieldChange = (e) => {
@@ -115,11 +115,11 @@ function Register() {
           type="email"
           className={`form-control ${formErrors.email ? 'is-invalid' : ''}`}
           id="email"
-          name="email"
           value={formState.email}
           aria-describedby="emailErr"
           placeholder="Enter email"
           onChange={handleFieldChange}
+          data-test="email"
         />
         {showErrorIconForId('email')}
       </div>
@@ -131,6 +131,8 @@ function Register() {
           id="password"
           placeholder="Enter Internshala password"
           onChange={handleFieldChange}
+          value={formState.password}
+          data-test="password"
         />
         {showErrorIconForId('password')}
         <small className="form-text text-muted">
@@ -148,6 +150,8 @@ function Register() {
               name="first_name"
               className={`form-control ${formErrors.first_name ? 'is-invalid' : ''}`}
               onChange={handleFieldChange}
+              value={formState.first_name}
+              data-test="first_name"
             />
             {showErrorIconForId('first_name')}
           </div>
@@ -163,6 +167,8 @@ function Register() {
               name="last_name"
               onChange={handleFieldChange}
               className={`form-control ${formErrors.last_name ? 'is-invalid' : ''}`}
+              value={formState.last_name}
+              data-test="last_name"
             />
             {showErrorIconForId('last_name')}
           </div>
@@ -178,12 +184,14 @@ function Register() {
               type="text"
               className={`form-control ${
                 formErrors.country_code ? 'is-invalid' : ''
-              }`}
+                }`}
               id="country_code"
               name="country_code"
               autoComplete="none"
               placeholder="+91"
               onChange={handleFieldChange}
+              value={formState.country_code}
+              data-test="country_code"
             />
             {showErrorIconForId('country_code')}
           </div>
@@ -192,10 +200,12 @@ function Register() {
               type="text"
               className={`form-control ${
                 formErrors.phone_primary ? 'is-invalid' : ''
-              }`}
+                }`}
               id="phone_primary"
               placeholder="8586080747"
               onChange={handleFieldChange}
+              value={formState.phone_primary}
+              data-test="phone_primary"
             />
             {showErrorIconForId('phone_primary')}
           </div>
