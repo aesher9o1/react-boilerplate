@@ -49,8 +49,8 @@ function Register() {
         Enter a valid email
       </small>
     ) : (
-        ''
-      )
+      ''
+    )
   }
 
   const showPhoneInvalid = () => {
@@ -59,16 +59,19 @@ function Register() {
         Enter a valid mobile number
       </small>
     ) : (
-        ''
-      )
+      ''
+    )
   }
 
   const showErrorIconForId = (id) => {
     return formErrors[id] ? (
-      <span className="fa fa-exclamation-circle error-icon" aria-hidden="true" />
+      <span
+        className="fa fa-exclamation-circle error-icon"
+        aria-hidden="true"
+      />
     ) : (
-        ''
-      )
+      ''
+    )
   }
 
   const handleFieldChange = (e) => {
@@ -148,7 +151,9 @@ function Register() {
               id="first_name"
               placeholder="John"
               name="first_name"
-              className={`form-control ${formErrors.first_name ? 'is-invalid' : ''}`}
+              className={`form-control ${
+                formErrors.first_name ? 'is-invalid' : ''
+              }`}
               onChange={handleFieldChange}
               value={formState.first_name}
               data-test="first_name"
@@ -166,7 +171,9 @@ function Register() {
               id="last_name"
               name="last_name"
               onChange={handleFieldChange}
-              className={`form-control ${formErrors.last_name ? 'is-invalid' : ''}`}
+              className={`form-control ${
+                formErrors.last_name ? 'is-invalid' : ''
+              }`}
               value={formState.last_name}
               data-test="last_name"
             />
@@ -184,7 +191,7 @@ function Register() {
               type="text"
               className={`form-control ${
                 formErrors.country_code ? 'is-invalid' : ''
-                }`}
+              }`}
               id="country_code"
               name="country_code"
               autoComplete="none"
@@ -200,7 +207,7 @@ function Register() {
               type="text"
               className={`form-control ${
                 formErrors.phone_primary ? 'is-invalid' : ''
-                }`}
+              }`}
               id="phone_primary"
               placeholder="8586080747"
               onChange={handleFieldChange}

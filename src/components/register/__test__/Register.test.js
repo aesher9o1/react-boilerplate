@@ -1,14 +1,12 @@
 import React from 'react'
-import {
-  mount
-} from 'enzyme'
+import { mount } from 'enzyme'
 import Register from '../Register'
 
 describe('Email Form Field Tests', () => {
   let wrapper
-  const invalidClass = "is-invalid"
+  const invalidClass = 'is-invalid'
   beforeEach(() => {
-    wrapper = mount( < Register / > )
+    wrapper = mount(<Register />)
   })
 
   test('it should check that there is only one email field', () => {
@@ -48,13 +46,11 @@ describe('Email Form Field Tests', () => {
   })
 })
 
-
-
 describe('Password Form Field Tests', () => {
   let wrapper
-  const invalidClass = "is-invalid"
+  const invalidClass = 'is-invalid'
   beforeEach(() => {
-    wrapper = mount( < Register / > )
+    wrapper = mount(<Register />)
   })
 
   test('it should check that there is only one password field', () => {
@@ -77,7 +73,6 @@ describe('Password Form Field Tests', () => {
     expect(updatedInput.props().value).toBe(CORRECT_PASSWORD)
   })
 
-
   test('it should check that there is only one password field and detects change of invalid password', () => {
     const WRONG_PASSWORD = ''
     const input = wrapper.find(`[data-test='password']`)
@@ -94,17 +89,13 @@ describe('Password Form Field Tests', () => {
     expect(updatedInput.props().value).toBe(WRONG_PASSWORD)
     expect(updatedInput.hasClass(invalidClass)).toBeTruthy()
   })
-
 })
-
-
-
 
 describe('First and Last Name Form Field Tests', () => {
   let wrapper
-  const invalidClass = "is-invalid"
+  const invalidClass = 'is-invalid'
   beforeEach(() => {
-    wrapper = mount( < Register / > )
+    wrapper = mount(<Register />)
   })
 
   test('it should check that there is only one first name field', () => {
@@ -116,7 +107,6 @@ describe('First and Last Name Form Field Tests', () => {
     const input = wrapper.find(`[data-test='last_name']`)
     expect(input).toHaveLength(1)
   })
-
 
   test('it should detect valid first and last names', () => {
     const CORRECT_NAME = 'aashiskumar986@gmail.com'
@@ -143,7 +133,6 @@ describe('First and Last Name Form Field Tests', () => {
     expect(updatedInputFName.props().value).toBe(CORRECT_NAME)
     expect(updatedInputLName.props().value).toBe(CORRECT_NAME)
   })
-
 
   test('it should detect invalid first name and last name ', () => {
     const WRONG_NAME = '123'
@@ -172,16 +161,13 @@ describe('First and Last Name Form Field Tests', () => {
     expect(updatedInputFName.hasClass(invalidClass)).toBeTruthy()
     expect(updatedInputLName.hasClass(invalidClass)).toBeTruthy()
   })
-
 })
-
-
 
 describe('Country Code Form Field Tests', () => {
   let wrapper
-  const invalidClass = "is-invalid"
+  const invalidClass = 'is-invalid'
   beforeEach(() => {
-    wrapper = mount( < Register / > )
+    wrapper = mount(<Register />)
   })
 
   test('it should check that there is only one country code field', () => {
@@ -205,7 +191,6 @@ describe('Country Code Form Field Tests', () => {
     expect(updatedInput.props().value).toBe(CORRECT_CODE)
   })
 
-
   test('it should detect change of invalid country code', () => {
     const WRONG_CODE = 'asdsf'
     const input = wrapper.find(`[data-test='country_code']`)
@@ -222,16 +207,13 @@ describe('Country Code Form Field Tests', () => {
     expect(updatedInput.props().value).toBe(WRONG_CODE)
     expect(updatedInput.hasClass(invalidClass)).toBeTruthy()
   })
-
 })
-
-
 
 describe('Primary Phone Form Field Tests', () => {
   let wrapper
-  const invalidClass = "is-invalid"
+  const invalidClass = 'is-invalid'
   beforeEach(() => {
-    wrapper = mount( < Register / > )
+    wrapper = mount(<Register />)
   })
 
   test('it should check that there is only one primary phone field', () => {
@@ -255,7 +237,6 @@ describe('Primary Phone Form Field Tests', () => {
     expect(updatedInput.props().value).toBe(CORRECT_PHONE)
   })
 
-
   test('it detects change of invalid phone', () => {
     const WRONG_PHONE = '678891923'
     const input = wrapper.find(`[data-test='phone_primary']`)
@@ -272,5 +253,4 @@ describe('Primary Phone Form Field Tests', () => {
     expect(updatedInput.props().value).toBe(WRONG_PHONE)
     expect(updatedInput.hasClass(invalidClass)).toBeTruthy()
   })
-
 })

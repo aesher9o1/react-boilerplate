@@ -16,7 +16,6 @@
   },
   "plugins": ["jsx-a11y", "prettier", "filenames"],
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "filenames/match-exported": 2,
     "filenames/no-index": 2,
     "no-plusplus": [
