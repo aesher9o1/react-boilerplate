@@ -3,13 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const outputFileNames = 'signupForm'
 
-const isProduction = process.env.NODE_ENV === 'production'
-const commonPlugings = [
-  new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, 'public', 'index.html')
-  })
-]
-
 module.exports = {
   mode: 'development',
   entry: path.resolve(__dirname, 'src', 'index.js'),
@@ -29,20 +22,16 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: [
-          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-          'css-loader',
-          'less-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
       }
     ]
   },
-  plugins: isProduction
-    ? [
-        new MiniCssExtractPlugin({
-          filename: `${outputFileNames}.css`
-        }),
-        ...commonPlugings
-      ]
-    : [...commonPlugings]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public', 'index.html')
+    }),
+    new MiniCssExtractPlugin({
+      filename: `${outputFileNames}.css`
+    })
+  ]
 }
